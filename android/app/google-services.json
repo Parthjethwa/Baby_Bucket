@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "149705016155",
+    "project_id": "pinkoimpex-c4adb",
+    "storage_bucket": "pinkoimpex-c4adb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149705016155:android:843684605fc108b25dd07e",
+        "android_client_info": {
+          "package_name": "pinko.application.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "149705016155-dkvv0qoonj9r76jokc432vftffj0geo0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pinko.application.customer",
+            "certificate_hash": "3c9996297668e6e041c71e23f685b9ca2d4f283d"
+          }
+        },
+        {
+          "client_id": "149705016155-5at9v6cm13qp69sf0i265g5jgo5fe506.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKHWe0asMK_16l87BiOX8hUW3prtpqeG0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "149705016155-5at9v6cm13qp69sf0i265g5jgo5fe506.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "149705016155-285vlis22ip6p6ru626vrs9nvlbps75v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "pinko.application.customer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

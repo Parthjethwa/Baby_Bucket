@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>149705016155-285vlis22ip6p6ru626vrs9nvlbps75v.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.149705016155-285vlis22ip6p6ru626vrs9nvlbps75v</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>149705016155-dkvv0qoonj9r76jokc432vftffj0geo0.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA6CXvC1J37ilYFDzzajMF17e_bFRmBf-s</string>
+	<key>GCM_SENDER_ID</key>
+	<string>149705016155</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>pinko.application.customer</string>
+	<key>PROJECT_ID</key>
+	<string>pinkoimpex-c4adb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pinkoimpex-c4adb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:149705016155:ios:5251be3857a85f985dd07e</string>
+</dict>
+</plist>
