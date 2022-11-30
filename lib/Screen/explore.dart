@@ -1,7 +1,13 @@
+import 'dart:async';
+import 'dart:convert';
 import 'dart:math';
 
-import 'package:pinko_implex/Screen/Product_Detail.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:http/http.dart';
+import 'package:pinko_implex/Helper/Session.dart';
 import 'package:pinko_implex/Helper/SimBtn.dart';
 import 'package:pinko_implex/Helper/SqliteData.dart';
 import 'package:pinko_implex/Provider/FavoriteProvider.dart';
@@ -10,25 +16,20 @@ import 'package:pinko_implex/Provider/SettingProvider.dart';
 import 'package:pinko_implex/Provider/Theme.dart';
 import 'package:pinko_implex/Provider/UserProvider.dart';
 import 'package:pinko_implex/Provider/explore_provider.dart';
+import 'package:pinko_implex/Screen/Product_Detail.dart';
 import 'package:pinko_implex/Screen/Seller_Details.dart';
 import 'package:pinko_implex/widgets/star_rating.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'dart:async';
-import 'dart:convert';
-import 'package:pinko_implex/Helper/Session.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:http/http.dart';
 import 'package:provider/provider.dart';
+import 'package:speech_to_text/speech_recognition_error.dart';
+import 'package:speech_to_text/speech_recognition_result.dart';
+import 'package:speech_to_text/speech_to_text.dart';
+
 import '../Helper/AppBtn.dart';
 import '../Helper/Color.dart';
 import '../Helper/Constant.dart';
 import '../Helper/String.dart';
 import '../Model/Section_Model.dart';
 import 'HomePage.dart';
-import 'package:speech_to_text/speech_recognition_error.dart';
-import 'package:speech_to_text/speech_recognition_result.dart';
-import 'package:speech_to_text/speech_to_text.dart';
 
 class Products extends StatefulWidget {
   const Products({Key? key}) : super(key: key);
@@ -376,12 +377,11 @@ class _SearchState extends State<Products> with TickerProviderStateMixin {
                     alignment: Alignment.topLeft,
                     color: Theme.of(context).colorScheme.white,
                     child: Text(getTranslated(context, 'ALL_PRODUCTS')!,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.normal,
-                    )
-                    ),/*TabBar(
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.normal,
+                        )), /*TabBar(
                       controller: _tabController,
                       tabs: [
                         Tab(
@@ -389,13 +389,13 @@ class _SearchState extends State<Products> with TickerProviderStateMixin {
                             child: Container(
 
                               child:*/
-                           /* ),
+                    /* ),
                           ),
                         ),
 
-                        *//*Tab(
+                        */ /*Tab(
                           child: Text(getTranslated(context, 'ALL_SELLERS')!),
-                        ),*//*
+                        ),*/ /*
                       ],
                       indicatorColor: colors.primary,
                       labelColor: Theme.of(context).colorScheme.fontColor,
@@ -414,14 +414,14 @@ class _SearchState extends State<Products> with TickerProviderStateMixin {
                       controller: _tabController,
                       children: [*/
                         Stack(
-                          children: <Widget>[
-                            _showContentOfProducts(),
-                            Center(
-                                child: showCircularProgress(
-                                    _isProgress, colors.primary)),
-                          ],
-                        ),
-                        /*Stack(
+                      children: <Widget>[
+                        _showContentOfProducts(),
+                        Center(
+                            child: showCircularProgress(
+                                _isProgress, colors.primary)),
+                      ],
+                    ),
+                    /*Stack(
                           children: <Widget>[
                             _showContentOfSellers(),
                             Selector<HomeProvider, bool>(
@@ -435,7 +435,7 @@ class _SearchState extends State<Products> with TickerProviderStateMixin {
                             ),
                           ],
                         ),*/
-                     /* ],
+                    /* ],
                     ),*/
                   ),
                 ],
@@ -618,14 +618,12 @@ class _SearchState extends State<Products> with TickerProviderStateMixin {
 
   setSnackbar(String msg) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      behavior:  SnackBarBehavior.floating,
+      behavior: SnackBarBehavior.floating,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(0),
       ),
       margin: EdgeInsets.only(
-          bottom: MediaQuery.of(context).size.height - 100,
-          right: 0,
-          left: 0),
+          bottom: MediaQuery.of(context).size.height - 100, right: 0, left: 0),
       content: Text(
         msg,
         textAlign: TextAlign.center,
@@ -1667,7 +1665,19 @@ class _SearchState extends State<Products> with TickerProviderStateMixin {
                       child: Hero(
                         transitionOnUserGestures: true,
                         tag: '${productList[index].id}$index',
-                        child: FadeInImage(
+                        child: /*CachedNetworkImage(
+                          imageUrl: productList[index].image!,
+                          height: double.maxFinite,
+                          width: double.maxFinite,
+                          placeholder: (context, url) => Image.asset(
+                            'assets/images/baby.png',
+                          ),
+                          errorWidget: (context, error, stackTrace) =>
+                              erroWidget(double.maxFinite),
+                          fit: BoxFit.cover,
+                        ),*/
+
+                            FadeInImage(
                           fadeInDuration: const Duration(milliseconds: 150),
                           image: CachedNetworkImageProvider(
                               productList[index].image!),
